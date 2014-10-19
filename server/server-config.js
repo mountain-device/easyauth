@@ -29,4 +29,12 @@ app.get('/*', function(req, res) {
   res.end('Welcome to EasyAuth!');
 });
 
+/*
+app.post('/:moduleName/login', function(req, res){
+  var module = require('./' + moduleName + '/auth.js');
+  //var stuffFromDB = getFromDatabase(req.body.user, moduleName);
+  module.login(req.body, stuffFromDB);
+});
+
+*/
 module.exports = app;
