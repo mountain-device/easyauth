@@ -24,4 +24,12 @@ app.get('/index', handler.renderIndex);
 app.get('/login', handler.loginForm);
 app.get('/*', handler.loginForm);
 
+/*
+app.post('/:moduleName/login', function(req, res){
+  var module = require('./' + moduleName + '/auth.js');
+  //var stuffFromDB = getFromDatabase(req.body.user, moduleName);
+  module.login(req.body, stuffFromDB);
+});
+
+*/
 module.exports = app;
