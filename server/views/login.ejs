@@ -1,11 +1,14 @@
 <form action="/login" method="post">
-    <div>
-      <input id="username" type="text" name="username" placeholder="Enter your email address">
-    </div>
-    <div>
-      <input type="submit" value="Go">
-    </div>
-</form>
-<p>
-  <a href="/signup">Create an Account &rarr;</a>
-<p>
+	<div class="container">
+
+	  <form class="form-signin" role="form">
+	    <input type="email" class="form-control" placeholder="Email address" required autofocus>
+
+	    <label class="checkbox">
+	      <input type="checkbox" value="remember-me"> Remember me
+	    </label>
+	    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+	  </form>
+
+  </div> 
