@@ -2,7 +2,7 @@
 * @module auth controller
  */
 
-var User = require('../models/model');
+var User = require('../models/user');
 var util = require('../lib/utility');
 var path = require('path');
 
