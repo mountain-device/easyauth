@@ -11,6 +11,7 @@ install: npm install
 script: grunt test
 
 notifications:
+  hipchat: [Zd4ejvwEck7Gsc9UXhEVaH25BKMjaSzvhguxbWQo]@[Mountain-device]
   email:
     recipients:
       - ryojiosawa@gmail.com

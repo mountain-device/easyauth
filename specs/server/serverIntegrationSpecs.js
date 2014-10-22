@@ -4,7 +4,7 @@ var expect = require('chai').expect;
 var app = require('../../server/server-config.js');
 
 var db = require('../../server/db-config');
-var User = require('../../server/app/models/model');
+var User = require('../../server/app/models/user');
 
 describe('Server-side integration test suite', function() {
 
