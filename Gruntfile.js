@@ -2,15 +2,13 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    concat: {
-    },
 
     mochaTest: {
       test: {
         options: {
           reporter: 'spec'
         },
-        src: ['server/test/serverSpec.js']
+        src: ['specs/server/**/*.js']
       }
     },
 
@@ -29,15 +27,16 @@ module.exports = function(grunt) {
 
     jshint: {
       files: [
-        // Add filespec list here
         'server.js',
-        'server/**/*.js'
+        'server/**/*.js',
+        'specs/**/*.js'
       ],
       options: {
         force: 'true',
         jshintrc: '.jshintrc',
         ignores: [
-          'lib/*.js'
+          'lib/*.js',
+          'server/modules/faceRecognition/lib/**/*.js'
         ]
       }
     },
@@ -52,12 +51,12 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: [
-          'client/*.js',
-          'lib/*.js'
+          'server.js',
+          'server/**/*.js',
+          'client/*.js'
         ],
         tasks: [
-          // 'concat',
-          // 'uglify'
+          'test'
         ]
       },
       css: {
@@ -79,6 +78,20 @@ module.exports = function(grunt) {
       upToProdServer: {
         command: 'git push azure master'
       }
+    }, 
+
+    bowercopy: {
+ 
+      libs: {
+        options: {
+          destPrefix: 'public/lib'
+        },
+        files: {
+          'jquery.min.js': 'jquery/jquery.min.js',
+          'underscore-min.js': 'underscore/underscore-min.js',
+          'bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
+        },
+      },
     }
   });
 
@@ -90,6 +103,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-bowercopy');
+
 
   grunt.registerTask('server-dev', function (target) {
     // Running nodejs in a different process and displaying output on the main console
@@ -114,11 +129,9 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    // 'concat',
-    // 'uglify',
-    'cssmin',
     'jshint',
-    'mochaTest'
+    'mochaTest', 
+    'bowercopy'
   ]);
 
   grunt.registerTask('deploy', function(){
@@ -137,7 +150,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['concat', 'uglify']);
+  grunt.registerTask('default', ['build']);
 
   grunt.registerTask('all', ['build', 'upload']);
 
