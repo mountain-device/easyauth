@@ -46,8 +46,7 @@ app.post('/modules/tempo/auth', tempoModule.auth);
 
 app.get('/login', handler.loginForm);
 app.post('/login', handler.login);
-app.get('/signup', handler.signupForm);
 app.get('/index', handler.renderIndex);
-app.get('/', handler.loginForm);
+app.get('/*', handler.loginForm);
 
 module.exports = app;
