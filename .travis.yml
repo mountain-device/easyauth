@@ -1,21 +1,32 @@
 language: node_js
 node_js:
-  - "0.11"
-  - "0.10"
-
+- '0.11'
+- '0.10'
 services:
-  - mongodb
-
-before_install: npm install -g grunt-cli
-install: npm install
-script: grunt test
-
+- mongodb
+before_install:
+- npm install -g grunt-cli
+install:
+- npm install
+script:
+- grunt test
 notifications:
+  hipchat:
+    rooms:
+      secure: emRMwJDQA8AqR7Nkex29hZmNlJFsDa1WmF6ctKD9S8cEhaictHuF48Wf3OVwXs2lsiN+7nPbzACSA0hlOn1uLA8GRtW7X+oypADb+csOEIHvoobthnJ0dp7yx6ikLlqjVW+fD2CxxT/61kMROwHtet2gGfQyEbTVDqxClTdO1T4=
+    template:
+      - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}'
+    on_success:
+      - always
+    on_failure:
+      - always
   email:
     recipients:
       - ryojiosawa@gmail.com
       - allenkrulwich@gmail.com
       - carlgoldberg1236@gmail.com
       - supriya.bhat@gmail.com
-    on_success: [always|never|change] # default: change
-    on_failure: [always|never|change] # default: always
+    on_success:
+      - change
+    on_failure:
+      - always
