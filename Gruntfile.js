@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -65,9 +65,14 @@ module.exports = function(grunt) {
         tasks: ['cssmin']
       }
     },
-    concat: {   
+
+    concat: {
       libs: {
-        src: ['public/lib/underscore-min.js', 'public/lib/jquery.min.js', 'public/lib/bootstrap.min.css'],
+        src: [
+          'public/lib/underscore-min.js',
+          'public/lib/jquery.min.js',
+          'public/lib/bootstrap.min.css'
+        ],
         dest: 'public/dist/public-libs.js'
       }
     },
@@ -81,14 +86,14 @@ module.exports = function(grunt) {
       }
     },
 
-    jsdoc : {
-      dist : {
+    jsdoc: {
+      dist: {
         src: ['server/**/*.js'],
         options: {
           destination: 'doc'
         }
       }
-    }, 
+    },
 
     bowercopy: {
       libs: {
@@ -120,19 +125,15 @@ module.exports = function(grunt) {
   grunt.registerTask('server-dev', function (target) {
     // Running nodejs in a different process and displaying output on the main console
     var nodemon = grunt.util.spawn({
-         cmd: 'grunt',
-         grunt: true,
-         args: 'nodemon'
+      cmd: 'grunt',
+      grunt: true,
+      args: 'nodemon'
     });
     nodemon.stdout.pipe(process.stdout);
     nodemon.stderr.pipe(process.stderr);
 
-    grunt.task.run([ 'watch' ]);
+    grunt.task.run(['watch']);
   });
-
-  ////////////////////////////////////////////////////
-  // Main grunt tasks
-  ////////////////////////////////////////////////////
 
   grunt.registerTask('test', [
     'jshint',
@@ -147,18 +148,17 @@ module.exports = function(grunt) {
     'jsdoc'
   ]);
 
-  grunt.registerTask('deploy', function(){
+  grunt.registerTask('deploy', function () {
     grunt.task.requires('build');
     grunt.task.run(['shell:upToProdServer']);
-    // add your deploy tasks here
   });
- 
-  grunt.registerTask('upload', function(n) {
-    if(grunt.option('prod')) {
+
+  grunt.registerTask('upload', function (n) {
+    if (grunt.option('prod')) {
       // add your production server task here
       grunt.task.run(['deploy']);
     } else {
-      grunt.task.run([ 'server-dev' ]);
+      grunt.task.run(['server-dev']);
     }
   });
 
