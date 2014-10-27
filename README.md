@@ -1,12 +1,12 @@
-# Project Name
+# EasyAuth [![Build Status](https://travis-ci.org/mountain-device/easyauth.svg?branch=master)](https://travis-ci.org/mountain-device/easyauth)
 
 > Pithy project description
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: Allen Krulwich
+  - __Scrum Master__: Ryo Osawa
+  - __Development Team Members__: Carl Goldberg, Supriya Bhat
 
 ## Table of Contents
 
