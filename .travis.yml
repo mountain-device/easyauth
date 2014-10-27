@@ -7,10 +7,16 @@ services:
   - mongodb
 
 before_install:
-  - sudo apt-get install libopencv-dev 
+  - sudo apt-get update
+  - sudo apt-get install build-essential checkinstall cmake pkg-config yasm
+  - sudo apt-get install libtiff4-dev libjpeg-dev libjasper-dev
+  - sudo apt-get install python-dev python-numpy
+  - sudo apt-get install libopencv-dev
   - npm install -g grunt-cli
-install: npm install
-script: grunt test
+install:
+  - npm install
+script:
+  - grunt test
 
 notifications:
   email:
