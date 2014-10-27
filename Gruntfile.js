@@ -97,6 +97,7 @@ module.exports = function(grunt) {
         },
         files: {
           'jquery.min.js': 'jquery/jquery.min.js',
+          'jquery.min.map': 'jquery/jquery.min.map',
           'underscore-min.map': 'underscore/underscore-min.map',
           'underscore-min.js': 'underscore/underscore-min.js',
           'bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
