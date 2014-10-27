@@ -18,7 +18,7 @@ describe('Server-side integration test suite', function() {
   });
 
   describe('app routes', function() {
-    xit('should always default to login page', function(done) {
+    it('should always default to login page', function(done) {
       request(app)
         .get('/')
         .expect(200)
