@@ -42,7 +42,7 @@
     "supertest": "^0.10.0"
   },
   "scripts": {
-    "start": "./node_modules/.bin/nodemon --ignore node_modules server.js",
+    "start": "node server.js",
     "test": "grunt test"
   }
 }
