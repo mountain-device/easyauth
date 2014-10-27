@@ -1,6 +1,6 @@
 # EasyAuth [![Build Status](https://travis-ci.org/mountain-device/easyauth.svg?branch=master)](https://travis-ci.org/mountain-device/easyauth)
 
-> Pithy project description
+EasyAuth is a new Authentication platform that provides a wide range of authentication services for web applications.
 
 ## Team
 
@@ -11,12 +11,11 @@
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-    1. [Installing Dependencies](#installing-dependencies)
-    1. [Tasks](#tasks)
-1. [Team](#team)
-1. [Contributing](#contributing)
+2. [Requirements](#requirements)
+3. [Development](#development)
+    1. [Setting up EasyAuth]
+4. [Roadmap](#roadmap)
+5. [Contributing](#contributing)
 
 ## Usage
 
@@ -25,26 +24,23 @@
 ## Requirements
 
 - Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- MongoDB
+- OpenCV
 
 ## Development
 
-### Installing Dependencies
-
-From within the root directory:
+Follow the steps below to set up EasyAuth in your local environment
 
 ```sh
-sudo npm install -g bower
-npm install
-bower install
+# git clone <your forked easyauth repo>
+# cd into easyauth repo
+# npm install
+# grunt build
 ```
 
-### Roadmap
+## Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://waffle.io/mountain-device/easyauth)
 
 
 ## Contributing
