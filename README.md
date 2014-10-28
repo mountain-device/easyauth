@@ -14,6 +14,7 @@ EasyAuth is a new Authentication platform that provides a wide range of authenti
 2. [Requirements](#requirements)
 3. [Development](#development)
     1. [Setting up EasyAuth]
+    2. [Creating a module]
 4. [Roadmap](#roadmap)
 5. [Contributing](#contributing)
 
