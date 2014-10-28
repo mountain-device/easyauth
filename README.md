@@ -42,6 +42,7 @@ Follow the steps below to set up EasyAuth in your local environment
 For EasyAuth to use your module, you will need to put your files in particular directories within the app. 
 
 * Each module is responsible for registering four request handlers in the route table:
+
 /server/server-config.js:
 ````
 var someModule = require('./modules/moduleName/auth.js');
@@ -52,6 +53,7 @@ app.post('/modules/moduleName/setup', util.checkUser, someModule.setup);
 app.post('/modules/moduleName/auth', util.checkUser, someModule.auth);
 ````
 * Then, you must create a module directory and an auth.js file:
+
 /server/modules/moduleName/auth.js:
 ````
 // Module directories should have an auth.js file that exports an object with the following four request handlers:
