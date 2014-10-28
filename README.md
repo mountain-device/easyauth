@@ -90,6 +90,7 @@ These can either be html forms that submit post requests, or an html file that h
 (The post request should be made to the path "", ie, the same url that user is currently viewing)
 
 /server/views/moduleName/moduleName-auth.ejs
+
 /server/views/moduleName/moduleName-setup.ejs
 
 ## Roadmap
