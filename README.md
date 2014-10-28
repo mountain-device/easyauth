@@ -89,7 +89,7 @@ module.exports = {
 ````
 * Then, you may optionally create templates for your GET request handlers:
 These can either be html forms that submit post requests, or an html file that has a script that makes a post request. 
-(The post request should be made to the path "", ie, the same url that user is currently viewing)
+**(The post request should be made to the path "", ie, the same url that user is currently viewing)
 
 /server/views/moduleName/moduleName-auth.ejs
 
