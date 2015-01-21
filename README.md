@@ -1,6 +1,7 @@
 # EasyAuth [![Build Status](https://travis-ci.org/mountain-device/easyauth.svg?branch=master)](https://travis-ci.org/mountain-device/easyauth)
 
-EasyAuth is a new Authentication platform that provides a wide range of authentication services for web applications.
+EasyAuth is a new Authentication platform that provides a wide range of authentication services for web applications. 
+http://https://easyauth.azurewebsites.net
 
 ## Team
 
